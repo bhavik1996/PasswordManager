@@ -58,7 +58,7 @@ function updateTable() {
     tdPassword.textContent = "••••••";
     //stores actual Password safely
     tdPassword.dataset.password = entry.password;
-    (tdPassword, (dataset.visible = "false"));
+    tdPassword.dataset.visible = "false";
 
     let tdDate = document.createElement("td");
     tdDate.textContent = entry.date;
@@ -94,7 +94,7 @@ function updateTable() {
         tdPassword.textContent = tdPassword.dataset.password;
         tdPassword.dataset.visible = "true";
       } else {
-        tdPassword.textContent = "******";
+        tdPassword.textContent = "••••••";
         tdPassword.dataset.visible = "false";
       }
     });
