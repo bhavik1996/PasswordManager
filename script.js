@@ -89,6 +89,16 @@ function updateTable() {
       editEntry(entry.id);
     });
 
+    eyeBtn.addEventListener("click", () => {
+      if (tdPassword.dataset.visible === "false") {
+        tdPassword.textContent = tdPassword.dataset.password;
+        tdPassword.dataset.visible = "true";
+      } else {
+        tdPassword.textContent = "******";
+        tdPassword.dataset.visible = "false";
+      }
+    });
+
     tr.appendChild(tdIndex);
     tr.appendChild(tdPortal);
     tr.appendChild(tdLink);
@@ -97,6 +107,7 @@ function updateTable() {
     tr.appendChild(tdDate);
     tr.appendChild(tdNotes);
     tr.appendChild(tdActions);
+    tdActions.appendChild(eyeBtn);
     tdActions.appendChild(editBtn);
     tdActions.appendChild(deleteBtn);
     tdLink.appendChild(linkTag);
