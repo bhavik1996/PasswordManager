@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Manager - Practice</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h2>Password Manager</h2>
+      <form class="passwordform" action="" id="passwordForm">
+        <input class="portalName passmanager" id="portalName" type="text" placeholder="Portal Name" />
+        <input class="portalLink passmanager" id="portalLink" type="url" placeholder="Portal Link" />
+        <input class="username passmanager" id="userName" type="text" placeholder="username" />
+        <input class="password-input passmanager" id="passwordInput" type="password" placeholder="Password" />
+        <!--value="password"-->
+        <input class="date passmanager" id="inputDate" type="date" placeholder="Date" />
+        <input class="notes passmanager" id="notes" type="text" placeholder="notes" />
+        <div><button type="submit" class="btn" id="submitBtn">Submit</button></div>
+      </form>
+    </div>
+    <div>
+      <table class="table">
+        <thead>
+          <tr class="tr">
+            <th class="theading">Sr. No.</th>
+            <th class="theading">Portal Name</th>
+            <th class="theading">Link</th>
+            <th class="theading">Username</th>
+            <th class="theading">Password</th>
+            <th class="theading">Date (Asof)</th>
+            <th class="theading">Notes</th>
+            <th class="">Show / Edit / Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Sample row commented -->
+          <!-- <tr class="tr">
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="flex">
+              <button class="btn eyeBtn show">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill">
+                  <path
+                    d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"
+                  />
+                  <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z" />
+                </svg></button
+              ><button class="btn edit">Edit</button><button class="btn delete">Delete</button>
+            </td>
+          </tr> -->
+          <!-- <tr class="noData" id="noData">
+            <td colspan="8">No data added yet</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
