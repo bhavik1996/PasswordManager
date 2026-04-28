@@ -103,9 +103,14 @@ function updateTable() {
       }
     });
 
-    copyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(entry.password);
-      alert("Password Copied");
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(entry.password);
+        //made success and error style
+        showToast("Password Copied", "sucess"); //changed alert to showToast
+      } catch (err) {
+        showToast("Error occurred", "error");
+      }
       // either "alert("Password Copied");" or the below one
       // copyBtn.textContent = "Password Copied";
       // setTimeout(() => {
@@ -168,6 +173,29 @@ function editEntry(id) {
 function deleteEntry(id) {
   passwordList = passwordList.filter((entry) => entry.id !== id);
   updateTable();
+}
+
+function showToast(message, type = "sucess") {
+  let container = document.getElementById("toastContainer");
+
+  let toast = document.createElement("div");
+  toast.classList.add("toast", type);
+  toast.textContent = message;
+
+  container.appendChild(toast);
+
+  //Timeout animation trigger
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 10);
+
+  //Remove trigger animation
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 400);
+  }, 3000);
 }
 
 form.addEventListener("submit", function (e) {

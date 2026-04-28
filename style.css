@@ -98,3 +98,31 @@ tr:hover {
 .noData {
   visibility: hidden;
 }
+
+#toastContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
+}
+.toast {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.toast.success {
+  background-color: green;
+}
+.toast.error {
+  background-color: red;
+}
