@@ -83,7 +83,7 @@ function updateTable() {
 
     let copyBtn = document.createElement("button");
     copyBtn.textContent = "Copy";
-    copyBtn.classList.add("btn");
+    copyBtn.classList.add("btn", "copy");
 
     deleteBtn.addEventListener("click", () => {
       deleteEntry(entry.id);
@@ -106,6 +106,11 @@ function updateTable() {
     copyBtn.addEventListener("click", () => {
       navigator.clipboard.writeText(entry.password);
       alert("Password Copied");
+      // either "alert("Password Copied");" or the below one
+      // copyBtn.textContent = "Password Copied";
+      // setTimeout(() => {
+      //   copyBtn.textContent = "Copy";
+      // }, 1500);
     });
 
     tr.appendChild(tdIndex);

@@ -76,11 +76,17 @@ tr:hover {
   justify-content: center;
 }
 
+.copy {
+  color: slateblue;
+}
 .edit {
   color: green;
 }
 .delete {
   color: red;
+}
+.copy:hover {
+  background-color: slateblue;
 }
 .edit:hover {
   background-color: green;
