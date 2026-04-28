@@ -81,6 +81,10 @@ function updateTable() {
     eyeBtn.textContent = "👁️";
     eyeBtn.classList.add("btn");
 
+    let copyBtn = document.createElement("button");
+    copyBtn.textContent = "Copy";
+    copyBtn.classList.add("btn");
+
     deleteBtn.addEventListener("click", () => {
       deleteEntry(entry.id);
     });
@@ -94,9 +98,14 @@ function updateTable() {
         tdPassword.textContent = tdPassword.dataset.password;
         tdPassword.dataset.visible = "true";
       } else {
-        tdPassword.textContent = "••••••";
+        tdPassword.textContent = "••••••"; //kept •••••• to keep consistency
         tdPassword.dataset.visible = "false";
       }
+    });
+
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(entry.password);
+      alert("Password Copied");
     });
 
     tr.appendChild(tdIndex);
@@ -108,6 +117,7 @@ function updateTable() {
     tr.appendChild(tdNotes);
     tr.appendChild(tdActions);
     tdActions.appendChild(eyeBtn);
+    tdActions.appendChild(copyBtn);
     tdActions.appendChild(editBtn);
     tdActions.appendChild(deleteBtn);
     tdLink.appendChild(linkTag);
